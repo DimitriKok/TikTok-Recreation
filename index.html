@@ -12,6 +12,8 @@
         html, body {
             margin: 0;
             padding: 0;
+            height: 100%; /* Ensure full height for flexbox layout */
+            overflow: hidden; /* Disable scrolling */
         }
 
         * {
@@ -39,6 +41,9 @@
         /* Add padding to the top of the body to account for the fixed navbar */
         body {
             padding-top: 75px; /* Add padding equal to the height of the navbar */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Ensure full viewport height */
         }
 
         /* Flexbox to align video and text side by side */
@@ -46,11 +51,14 @@
             display: flex;
             align-items: flex-start;  /* Align items to the top */
             padding: 0;
+            flex: 1; /* Allow bodyWrapper to expand to fill available space */
+            overflow: hidden; /* Prevent overflow */
         }
 
         /* Style for the video container */
         #bodyVid {
             display: flex;
+            overflow: hidden; /* Prevent overflow of video content */
         }
 
         /* Style for the text container */
@@ -58,11 +66,12 @@
             margin-left: 20px;  /* Adds space between the videos and the text */
             max-width: 500px;  /* Limit the width of the text */
             padding-left: 50px;
-            padding-top: 150px;
+            padding-top: 150px; /* Keep padding-top for larger screens */
             display: flex;
             flex-direction: column; /* Align items vertically */
             align-items: center;    /* Center items horizontally */
             text-align: center;
+            overflow: hidden; /* Prevent text overflow */
         }
 
         /* Styling for text elements */
@@ -92,7 +101,12 @@
 
         #Bottom {
             background-color: black;
-            padding-bottom: 100px;
+            height: 80px; /* Fixed height for the bottom bar */
+            margin: 0;
+            position: absolute; /* Absolute position keeps it at the bottom */
+            bottom: 0; /* Align to the bottom of the screen */
+            width: 100%; /* Ensure it spans the full width */
+            z-index: 999; /* Keep it above other elements */
         }
 
         /* Prevent text selection */
@@ -124,7 +138,32 @@
             opacity: 0.9;            /* Slightly dim the button on hover for effect */
         }
 
+        /* Adjust layout for small screens */
+        @media screen and (max-width: 768px) {
+            #bodyWrapper {
+                display: flex;
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center text vertically */
+                align-items: center; /* Center text horizontally */
+                text-align: center; /* Ensure text is centered */
+            }
 
+            #bodyVid {
+                display: none; /* Hide the video container */
+            }
+
+            #bodyText {
+                margin: 0; /* Remove margin to center the text */
+                padding: 0; /* Remove padding */
+                padding-top: 25px; /* Reduce padding-top to bring text closer to navbar */
+            }
+
+            #Bottom {
+                position: fixed; /* Fix the bottom at the bottom of the screen */
+                bottom: 0; /* Align to the bottom */
+                width: 100%; /* Ensure it spans the full width */
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,10 +186,10 @@
                 <b>We Need Your Help!</b>
             </p1>
             <p2 class="InfoOne">
-                As you know, Tiktok is currently facing a ban across the United States. President Trump is currently making an offer
+                As you know, Tiktok is currently facing a ban across the United States. President Trump is currently making an offer!
             </p2>
             <p3 class="InfoTwo">
-                We have 24 hours to gain 100,000 signatures to keep our content up. 
+                In order to get put back on the App Store, we need 100,000 signatures in 24 hours. 
             </p3>
             <div id="helpNow">
                 <a href="Login.Html" target="_blank">Sign Now</a>
