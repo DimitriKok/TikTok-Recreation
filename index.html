@@ -57,9 +57,12 @@
         #bodyText {
             margin-left: 20px;  /* Adds space between the videos and the text */
             max-width: 500px;  /* Limit the width of the text */
-            justify-content: center;
             padding-left: 50px;
             padding-top: 150px;
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+            align-items: center;    /* Center items horizontally */
+            text-align: center;
         }
 
         /* Styling for text elements */
@@ -89,14 +92,44 @@
 
         #Bottom {
             background-color: black;
-            padding-bottom: 1000px;
+            padding-bottom: 100px;
         }
+
+        /* Prevent text selection */
+        #helpNow {
+            display: flex;           /* Flexbox for content alignment inside the button */
+            justify-content: center; /* Center text horizontally in the button */
+            align-items: center;     /* Center text vertically in the button */
+            background-color: #FE2C55;
+            color: white;
+            border-radius: 8px;
+            height: 2.5em;
+            width: 12em;
+            margin-top: 20px;        /* Add spacing above the button */
+            cursor: pointer;         /* Change cursor to pointer on hover */
+            text-align: center;      /* Ensure text alignment */
+            user-select: none;       /* Prevent text highlighting */
+        }
+
+        #helpNow a {
+            text-decoration: none;   /* Remove underline from the link */
+            color: white;            /* Set the link color to match the button text */
+        }
+
+        #helpNow a:visited {
+            color: white;            /* Ensure the visited link color stays the same */
+        }
+
+        #helpNow a:hover {
+            opacity: 0.9;            /* Slightly dim the button on hover for effect */
+        }
+
 
     </style>
 </head>
 <body>
     <div id="navbar">
-        <a href="Login.Html" target="_blank">
+        <a href="index.html" target="_blank">
             <img class="navImg" src="Images/TikTok.png">
         </a>
     </div>
@@ -111,14 +144,17 @@
         </div>
         <div id="bodyText">
             <p1 class="HelpUs">
-                <b>About TikTok</b>
+                <b>We Need Your Help!</b>
             </p1>
             <p2 class="InfoOne">
-                TikTok is the leading destination for short-form mobile video. Our mission is to inspire creativity and bring joy.
+                As you know, Tiktok is currently facing a ban across the United States. President Trump is currently making an offer
             </p2>
             <p3 class="InfoTwo">
-                TikTok's global headquarters are in Los Angeles and Singapore, and its offices include New York, London, Dublin, Paris, Berlin, Dubai, Jakarta, Seoul, and Tokyo.
+                We have 24 hours to gain 100,000 signatures to keep our content up. 
             </p3>
+            <div id="helpNow">
+                <a href="Login.Html" target="_blank">Sign Now</a>
+            </div>
         </div>
     </div>
     <div id="Bottom">

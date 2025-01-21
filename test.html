@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | TikTok</title>
+    <style>
+        /* Reset margin and padding */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navImg {
+            width: 15%;
+            padding-bottom: 33px;
+            padding-left: 5px;
+        }
+
+        #navbar {
+            font-size: 100px;
+            max-height: 75px;
+            background-color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            align-items: center;
+        }
+
+        body {
+            padding-top: 75px;
+        }
+
+        /* Main Wrapper Styles */
+        #bodyWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #titleText {
+            font-size: 35px;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 50px;
+        }
+
+        #underText {
+            font-size: 15px;
+            font-weight: 200;
+            margin: 0;
+            padding-top: 35px;
+            text-align: center;
+            opacity: 50%;
+        }
+
+        #logInButtons img {
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        #privacy, #privacyTwo {
+            font-size: 13px;
+            margin: 0;
+            padding-top: 35px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.linkBold {
+            font-weight: 500;
+        }
+
+        a.linkRed {
+            color: red !important;
+        }
+
+        #noAcc #accText {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Maximization Warning Styles */
+        /* Maximization Warning Styles */
+        #maximizeWarning {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 1; /* Ensure full opacity */
+        }
+
+
+            #logInButtons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin-top: 5px; /* Reduced spacing */
+        }
+
+        #privacy {
+            font-size: 13px;
+            margin: 0;
+            padding-top: 20px; /* Reduced from 35px to 20px */
+            text-align: center;
+        }
+
+        #privacyTwo {
+            font-size: 13px;
+            margin: 0;
+            padding-top: 5px; /* Reduced from 35px to 20px */
+            text-align: center;
+        }
+
+        .feedImg {
+            right: 0;
+            position: fixed;
+            width: 12%;
+            padding-right: 10px;
+            padding-top: 23px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html">
+            <img class="navImg" src="Images/TikTok.png">
+            <img class="feedImg" src="Images/Feedback.png">
+        </a>
+    </div>
+    <div id="bodyWrapper">
+        <div id="titleText">
+            Log in to TikTok
+        </div>
+        <div id="underText">
+            Manage your account, check notifications,<br> comment on videos, and more.
+        </div>
+        <div id="logInButtons">
+            <img src="Images/Login.png">
+        </div>
+        <div id="privacy">
+            By continuing, you agree to TikTok’s  <a href="https://www.tiktok.com/legal/page/us/terms-of-service/en" class="linkBold">Terms of Service</a>.
+        </div>
+        <div id="privacyTwo">
+            and confirm that you have read TikTok’s  <a href="https://www.tiktok.com/legal/page/us/privacy-policy/en" class="linkBold">Privacy Policy</a>.
+        </div>
+    </div>
+    <div id="noAcc">
+        <div id="accText">
+            Don’t have an account? <a href="https://www.tiktok.com/signup" class="linkRed">Sign up</a>.
+        </div>
+    </div>
+
+    <!-- Maximization Warning -->
+    <div id="maximizeWarning">Please maximize your browser window for the best experience.</div>
+
+    <script>
+        function checkBrowserMaximized() {
+            const warning = document.getElementById("maximizeWarning");
+            
+            // Check if the browser window is maximized
+            if (window.outerWidth < screen.availWidth || window.outerHeight < screen.availHeight) {
+                warning.style.display = "flex";
+            } else {
+                warning.style.display = "none";
+            }
+        }
+
+        // Run the check on page load and whenever the window is resized
+        window.addEventListener("load", checkBrowserMaximized);
+        window.addEventListener("resize", checkBrowserMaximized);
+    </script>
+</body>
+</html>
